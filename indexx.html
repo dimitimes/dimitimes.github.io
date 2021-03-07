@@ -62,120 +62,13 @@
         <h1 style="color: black; text-align: center; font-size: 100px; line-height: 100px; font-family: 'Noto Sans KR', sans-serif;">Dimi Time Table</h1>
         <h1 style="color: rgb(244, 11, 126); text-align: center; font-size: 100px; line-height: 100px; font-family: 'Noto Sans KR', sans-serif;">Made HD 아인</h1>
         <br><br><br><br>
+        <h1 style="color: gray; text-align: center; font-size: 60; line-height: 100px; font-family: 'Noto Sans KR', sans-serif;">Dimi Time Table은</h1>
+        <h1 style="color: rgb(244, 11, 126); text-align: center; font-size: 70px; line-height: 100px; font-family: 'Noto Sans KR', sans-serif;">시간표 변경으로 인해 공사 중</h1>
+        <h1 style="color: black; text-align: center; font-size: 35px; line-height: 100px; font-family: 'Noto Sans KR', sans-serif;">3월 8일 일요일, 새로운 디자인과 시간표로 다시 오픈합니다!</h1>
+        <br><br><br>
         <div style="text-align: center;">
             <a href="https://hcs.eduro.go.kr/" target="_blank" class="btn btn-warning" style="font-size: 40px; font-family: 'Noto Sans KR', sans-serif; color: black;">자가진단 참여하기 ></a>
         </div>
-        <br><br><br><br>
-        <div style="font-size: 40px;">1반의 오늘의 시간표</div>
-        <br>
-        <div id="time1A" style="font-size: 58px; color: black;">오늘의 교시가 뜨는 자리입니다!</div>
-        <div id="time1B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
-        <br><br><br><br>
-        <div style="font-size: 40px;">2반의 오늘의 시간표</div>
-        <br>
-        <div id="time2A" style="font-size: 58px; color: black;">오늘의 교시가 뜨는 자리입니다!</div>
-        <div id="time2B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
-        <br><br><br><br>
-        <div style="font-size: 40px;">3반의 오늘의 시간표</div>
-        <br>
-        <div id="time3A" style="font-size: 58px; color: black;">오늘의 교시가 뜨는 자리입니다!</div>
-        <div id="time3B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
-        <br><br><br><br>
-        <div style="font-size: 40px;">4반의 오늘의 시간표</div>
-        <br>
-        <div id="time4A" style="font-size: 58px; color: black;">오늘의 교시가 뜨는 자리입니다!</div>
-        <div id="time4B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
-        <br><br><br><br>
-        <div style="font-size: 40px;">5반의 오늘의 시간표</div>
-        <br>
-        <div id="time5A" style="font-size: 58px; color: black;">오늘의 교시가 뜨는 자리입니다!</div>
-        <div id="time5B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
-        <br><br><br><br>
-        <div style="font-size: 40px;">6반의 오늘의 시간표</div>
-        <br>
-        <div id="time6A" style="font-size: 58px; color: black;">오늘의 교시가 뜨는 자리입니다!</div>
-        <div id="time6B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
-        <script>
-
-            var today = new Date();
-
-            var day = today.getDay();
-
-            if(day == 1){ // 월요일
-                var timeBlock = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
-                var timeBlock1 = "영어 국어 컴그 컴그 과학 음악 HR"
-                var timeBlock2 = "상경 영어 진로 체육 한국 사회 HR"
-                var timeBlock3 = "사회 과학 체육 음악 플밍 플밍 HR"
-                var timeBlock4 = "컴시 컴시 사물 수학 음악 영어 HR"
-                var timeBlock5 = "미술 사회 수학 영어 국어 사물 HR"
-                var timeBlock6 = "플밍 플밍 국어 과학 미술 체육 HR"
-            } else if(day == 2){ // 화요일
-                var timeBlock = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
-                var timeBlock1 = "사회 상경 과학 수학 한국 영어 음악"
-                var timeBlock2 = "한국 사회 국어 영어 상경 미술 과학"
-                var timeBlock3 = "플밍 플밍 컴시 컴시 국어 사물 사물"
-                var timeBlock4 = "과학 수학 음악 체육 플밍 플밍 국어"
-                var timeBlock5 = "사물 사물 영어 과학 수학 사회 체육"
-                var timeBlock6 = "수학 국어 미술 사회 진로 컴시 영어"
-            } else if(day == 3){ // 수요일
-                var timeBlock = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6"
-                var timeBlock1 = "상경 체육 사회 한국 과학 CA"
-                var timeBlock2 = "미술 과학 수학 체육 진로 CA"
-                var timeBlock3 = "국어 수학 영어 사회 진로 CA"
-                var timeBlock4 = "영어 사회 국어 컴시 진로 CA"
-                var timeBlock5 = "컴시 컴시 플밍 플밍 국어 CA"
-                var timeBlock6 = "과학 사물 사물 수학 체육 CA"
-            } else if(day == 4){ // 목요일
-                var timeBlock = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
-                var timeBlock1 = "수학 영어 상경 음악 진로 국어 한국"
-                var timeBlock2 = "국어 수학 한국 과학 컴그 컴그 사회"
-                var timeBlock3 = "사회 음악 과학 국어 체육 영어 수학"
-                var timeBlock4 = "플밍 플밍 수학 사회 사물 사물 과학"
-                var timeBlock5 = "과학 미술 체육 영어 플밍 플밍 진로"
-                var timeBlock6 = "사물 국어 사회 수학 컴시 컴시 영어"
-            } else if(day == 5){ // 금요일
-                var timeBlock = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
-                var timeBlock1 = "진로 국어 사회 수학 컴그 컴그 체육"
-                var timeBlock2 = "상경 컴그 컴그 영어 국어 미술 수학"
-                var timeBlock3 = "음악 영어 과학 사물 진로 수학 컴시"
-                var timeBlock4 = "영어 과학 음악 국어 체육 사회 진로"
-                var timeBlock5 = "국어 사회 수학 컴시 과학 진로 미술"
-                var timeBlock6 = "사회 미술 플밍 플밍 영어 과학 진로"
-            } else{ // 토요일, 일요일
-                var timeBlockA = "와!"
-                var timeBlockA = "오늘은 수업이 없는 날입니다!"
-            }
-
-            document.getElementById("time1A").innerHTML = timeBlock;
-            document.getElementById("time2A").innerHTML = timeBlock;
-            document.getElementById("time3A").innerHTML = timeBlock;
-            document.getElementById("time4A").innerHTML = timeBlock;
-            document.getElementById("time5A").innerHTML = timeBlock;
-            document.getElementById("time6A").innerHTML = timeBlock;
-
-            document.getElementById("time1B").innerHTML = timeBlock1;
-            document.getElementById("time2B").innerHTML = timeBlock2;
-            document.getElementById("time3B").innerHTML = timeBlock3;
-            document.getElementById("time4B").innerHTML = timeBlock4;
-            document.getElementById("time5B").innerHTML = timeBlock5;
-            document.getElementById("time6B").innerHTML = timeBlock6;
-
-        </script>
-        <br><br><br><br>
-        <div style="font-size: 30px;">온라인 수업 자동 연결 기능은 디미고 학생인증 후 사용 가능합니다.</div>
-        <div style="font-size: 30px;">해방 외의 과는 지원하지 않고, 수업 링크 유출 시 처벌될 수 있습니다.</div>
-        <br>
-        <div style="text-align: center;">
-            <form method="get" action="timeblock.html">
-                <input type="text" placeholder="학번 4자리" name="number" style="font-size: 40px; font-family: 'Noto Sans KR', sans-serif; color: black;">
-                <br>
-                <input type="text" placeholder="학생 이름" name="name" style="font-size: 40px; font-family: 'Noto Sans KR', sans-serif; color: black;">
-                <br><br>
-                <input type="submit" value="디미고 학생인증 >" class="btn btn-warning" style="font-size: 40px; font-family: 'Noto Sans KR', sans-serif; color: black;">
-            </form>
-        </div>
-        <br><br><br><br>
-        <p style="text-align: center; font-size: 30px;">Copyright © 2021 KimAin. 모든 권리 보유.</p>
         <br><br><br><br>
     </body>
 </html>
