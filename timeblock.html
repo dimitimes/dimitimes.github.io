@@ -50,7 +50,7 @@
             .top_bar_fix{position:fixed; top:0; left:0; width:100%;}
             .pd_top_80{padding-top:80px;}
             .wrap .top_fix_zone{height:60px; background:#d63232; line-height:60px;}
-            .wrap .top_fix_zones{height:60px; background:#3276d6; line-height:60px;}
+            .wrap .top_fix_zones{height:60px; background:#000000; line-height:60px;}
         </style>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     </head>
@@ -102,6 +102,11 @@
                 <a style="color: white;">해방 외의 과는 지원하지 않고, 수업 링크 유출 시 처벌될 수 있습니다.</a>
             </div>
         </div>
+        <div class="wrap">
+            <div class="top_fix_zones" id="topBar">
+                <a style="color: white;">월->목 & 화->금 | 바뀐 시간표 적용되었습니다. 바로 접속 바랍니다.</a>
+            </div>
+        </div>
         <br><br><br><br><br><br>
         <h1 style="color: gray; text-align: center; font-size: 100px; line-height: 100px; font-family: 'Noto Sans KR', sans-serif;">Welcome to</h1>
         <h1 style="color: rgb(244, 11, 126); text-align: center; font-size: 100px; line-height: 100px; font-family: 'Noto Sans KR', sans-serif;">Dimi Time Table</h1>
@@ -140,11 +145,11 @@
         <br>
         <div style="text-align: center;">
             <script>
-                var sj51 = ["사회", "플밍", "플밍", "미술", "수학", "국어", "HR"] // 5반 월
-                var sj52 = ["사물", "사물", "컴시", "영어", "플밍", "플밍", "체육"] // 5반 화
+                var sj54 = ["사회", "플밍", "플밍", "미술", "수학", "국어", "HR"] // 5반 월
+                var sj55 = ["사물", "사물", "컴시", "영어", "플밍", "플밍", "체육"] // 5반 화
                 var sj53 = ["국어", "컴시", "영어", "수학", "과학", "CA"] // 5반 수
-                var sj54 = ["사회", "과학", "체육", "진로", "미술", "컴시", "국어"] // 5반 목
-                var sj55 = ["수학", "미술", "과학", "사물", "영어", "사회", "진로"] // 5반 금
+                var sj51 = ["사회", "과학", "체육", "사물", "미술", "컴시", "국어"] // 5반 목 // 4교시 원래 진로임 변경요망
+                var sj52 = ["수학", "미술", "과학", "사물", "영어", "사회", "진로"] // 5반 금
 
                 var today = new Date();
 
@@ -175,11 +180,11 @@
         <br>
         <div style="text-align: center;">
             <script>
-                var sj61 = ["미술", "컴시", "국어", "수학", "영어", "체육", "HR"] // 6반 월
-                var sj62 = ["사회", "수학", "영어", "국어", "과학", "미술", "진로"] // 6반 화
+                var sj64 = ["미술", "컴시", "국어", "수학", "영어", "체육", "HR"] // 6반 월
+                var sj65 = ["사회", "수학", "영어", "국어", "과학", "미술", "진로"] // 6반 화
                 var sj63 = ["과학", "사물", "사물", "진로", "체육", "CA"] // 6반 수
-                var sj64 = ["수학", "컴시", "영어", "사회", "플밍", "플밍", "미술"] // 6반 목
-                var sj65 = ["사물", "사회", "플밍", "플밍", "과학", "국어", "컴시"] // 6반 금
+                var sj61 = ["수학", "컴시", "영어", "사회", "플밍", "플밍", "미술"] // 6반 목
+                var sj62 = ["사물", "사회", "플밍", "플밍", "과학", "국어", "컴시"] // 6반 금
 
                 var today = new Date();
 
