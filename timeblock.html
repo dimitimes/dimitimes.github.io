@@ -292,9 +292,11 @@
 
             var temp = getParam("name");
             var num = getParam("number");
+            temp = encodeURI(temp)
             
             console.log(getParam("name"))
             console.log(getParam("number"))
+            console.log(temp)
 
             let link = 'https://api.findflag.kr/dimitimes/' + num + '/' + temp;
             $.ajax({
