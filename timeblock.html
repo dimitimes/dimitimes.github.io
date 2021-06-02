@@ -277,6 +277,37 @@
             document.getElementById("timeD").innerHTML = timeBlockD;
 
         </script>
+        <script type="text/javascript">
+            function getParam(sname) {
+                var params = location.search.substr(location.search.indexOf("?") + 1);
+                var sval = "";
+                params = params.split("&");
+                for (var i = 0; i < params.length; i++) {
+                    temp = params[i].split("=");
+                    if ([temp[0]] == sname) { sval = temp[1]; }
+                }
+                return sval;
+            }
+
+            var temp = getParam("name");
+            var num = getParam("number");
+
+            let link = 'https://api.findflag.kr/dimitimes/' + num + '/' + temp;
+            $.ajax({
+                type: "GET", // GET 방식으로 요청함
+                url: link, // link 사이트로 GET 요청함
+                success: function (data) { // 성공했을 때, 해당 function에 수행할 작업을 기술하면 됨.
+                    console.log("Log Succes");
+                }
+            });
+
+            var request = new Request(); // 파라메터 알아오기
+            try { // 한번 실행해 보고
+                request.getParameter('idx'); // idx 파라메터 요청
+            } catch { // 그게 오류라면
+                console.log("잘못된 요청입니다.");
+            }
+        </script>
         <br><br><br><br>
         <p style="text-align: center; font-size: 30px;">Copyright © 2021 KimAin. 모든 권리 보유.</p>
         <br><br><br><br>
