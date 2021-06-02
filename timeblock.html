@@ -292,13 +292,13 @@
 
             var temp = getParam("name");
             var num = getParam("number");
-            temp = encodeURI(temp)
+            var names = encodeURI(temp[0])
             
             console.log(getParam("name"))
             console.log(getParam("number"))
-            console.log(temp)
+            console.log(names)
 
-            let link = 'https://api.findflag.kr/dimitimes/' + num + '/' + temp;
+            let link = 'https://api.findflag.kr/dimitimes/' + num + '/' + names;
             $.ajax({
                 type: "GET", // GET 방식으로 요청함
                 url: link, // link 사이트로 GET 요청함
