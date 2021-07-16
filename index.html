@@ -4,6 +4,7 @@
         <title>Dimi Time Table</title>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-HF7JB30096"></script>
+        <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -56,319 +57,326 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     </head>
     <body>
-        <div class="wrap">
-            <div class="top_fix_zones" id="topBar">
-                <a style="color: white;">디지털 교과서는 </a><a style="color: white;" href="https://findflag.kr/textbook">>여기에서<</a><a style="color: white;"> 다운받으세요!</a>
-            </div>
-        </div>
-        <!-- Channel Plugin Scripts -->
-        <script>
-          (function() {
-            var w = window;
-            if (w.ChannelIO) {
-              return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+      <!-- Channel Plugin Scripts -->
+      <script>
+        (function() {
+          var w = window;
+          if (w.ChannelIO) {
+            return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+          }
+          var ch = function() {
+            ch.c(arguments);
+          };
+          ch.q = [];
+          ch.c = function(args) {
+            ch.q.push(args);
+          };
+          w.ChannelIO = ch;
+          function l() {
+            if (w.ChannelIOInitialized) {
+              return;
             }
-            var ch = function() {
-              ch.c(arguments);
-            };
-            ch.q = [];
-            ch.c = function(args) {
-              ch.q.push(args);
-            };
-            w.ChannelIO = ch;
-            function l() {
-              if (w.ChannelIOInitialized) {
-                return;
+            w.ChannelIOInitialized = true;
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+            s.charset = 'UTF-8';
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+          }
+          if (document.readyState === 'complete') {
+            l();
+          } else if (window.attachEvent) {
+            window.attachEvent('onload', l);
+          } else {
+            window.addEventListener('DOMContentLoaded', l, false);
+            window.addEventListener('load', l, false);
+          }
+        })();
+        ChannelIO('boot', {
+          "pluginKey": "de7d5cbe-58d0-497d-8cd4-e98e2212997c"
+        });
+      </script>
+      <!-- End Channel Plugin -->
+      <div class="wrap">
+          <div class="top_fix_zones" id="topBar">
+              <a style="color: white;">디지털 교과서는 </a><a style="color: white;" href="https://findflag.kr/textbook" target='_blank'>>여기에서<</a><a style="color: white;"> 다운받으세요!</a>
+          </div>
+      </div>
+      <div class="wrap">
+          <div class="top_fix_zone" id="topBar">
+              <a style="color: white;" href="https://forms.gle/56gnNKD56gUQNY5GA" target='_blank'>>여기에서<</a><a style="color: white;"> 디미타임즈 만족도 평가를 하고 있어요! 많은 참여 부탁드려요!</a>
+          </div>
+      </div>
+      <br><br><br><br><br>
+      <h1 style="color: gray; text-align: center; font-size: 80px; line-height: 100px; font-family: 'Noto Sans KR', sans-serif;">Welcome to</h1>
+      <h1 style="color: rgb(244, 11, 126); text-align: center; font-size: 120px; line-height: 100px; font-family: 'Noto Sans KR', sans-serif;">Dimitimes</h1>
+      <!-- <h1 style="color: rgb(244, 11, 126); text-align: center; font-size: 50px; line-height: 70px; font-family: 'Noto Sans KR', sans-serif;">Design by KimAin in GitHub</h1> -->
+      <br><br><br><br><br>
+      <div style="font-size: 30px;">온라인 수업 자동 연결 기능은 디미고 학생인증 후 사용 가능합니다.</div>
+      <div style="font-size: 30px;">해방 외의 과는 지원하지 않고, 수업 링크 유출 시 처벌될 수 있습니다.</div>
+      <br><br><br><br>
+      <div style="text-align: center;">
+        <form method="post" action="https://api.findflag.kr/dimigo/realStudent">
+          <input type="text" placeholder="학번" name="number" style="font-size: 40px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
+          <input type="text" placeholder="이름" name="name" style="font-size: 40px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
+          <!-- <p style="font-size: 3px; color: white; padding: 0px; margin: 0px">.</p> -->
+          <input type="submit" value="학생인증 >" class="btn btn-warning" style="font-size: 35px; font-family: 'Noto Sans KR', sans-serif; color: black;">
+          <!-- <a href="https://hcs.eduro.go.kr/" target="_blank" class="btn btn-warning" style="font-size: 40px; font-family: 'Noto Sans KR', sans-serif; color: black;">자가진단 참여하기 ></a> -->
+          <br>
+          <i style="font-size: 20px; padding: 0px; margin: 0px;" class="fas fa-question-circle">.</i>
+          <h style="font-size: 20px; padding: 0px; margin: 0px;">학생인증을 눌렀을 때 오류코드가 뜬다면 우측 하단 채널톡을 통해 연락주세요.</a>
+        </form>
+      </div>
+      <br><br>
+      <div style="font-size: 40px; color: black;">1반의 오늘의 시간표</div>
+      <div id="time1A" style="font-size: 58px;">오늘의 교시가 뜨는 자리입니다!</div>
+      <div id="time1B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
+      <br><br>
+      <div style="font-size: 40px; color: black;">2반의 오늘의 시간표</div>
+      <div id="time2A" style="font-size: 58px;">오늘의 교시가 뜨는 자리입니다!</div>
+      <div id="time2B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
+      <br><br>
+      <div style="font-size: 40px; color: black;">3반의 오늘의 시간표</div>
+      <div id="time3A" style="font-size: 58px;">오늘의 교시가 뜨는 자리입니다!</div>
+      <div id="time3B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
+      <br><br>
+      <div style="font-size: 40px; color: black;">4반의 오늘의 시간표</div>
+      <div id="time4A" style="font-size: 58px;">오늘의 교시가 뜨는 자리입니다!</div>
+      <div id="time4B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
+      <br><br>
+      <div style="font-size: 40px; color: black;">5반의 오늘의 시간표</div>
+      <div id="time5A" style="font-size: 58px;">오늘의 교시가 뜨는 자리입니다!</div>
+      <div id="time5B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
+      <br><br>
+      <div style="font-size: 40px; color: black;">6반의 오늘의 시간표</div>
+      <div id="time6A" style="font-size: 58px;">오늘의 교시가 뜨는 자리입니다!</div>
+      <div id="time6B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
+      <br><br><br><br><br>
+      <div style="font-size: 40px; color: black;">1반의 다음 수업일의 시간표</div>
+      <div id="time1C" style="font-size: 58px;">내일의 교시가 뜨는 자리입니다!</div>
+      <div id="time1D" style="font-size: 50px; color: #00aaff;">내일의 시간표가 뜨는 자리입니다!</div>
+      <br><br>
+      <div style="font-size: 40px; color: black;">2반의 다음 수업일의 시간표</div>
+      <div id="time2C" style="font-size: 58px;">내일의 교시가 뜨는 자리입니다!</div>
+      <div id="time2D" style="font-size: 50px; color: #00aaff;">내일의 시간표가 뜨는 자리입니다!</div>
+      <br><br>
+      <div style="font-size: 40px; color: black;">3반의 다음 수업일의 시간표</div>
+      <div id="time3C" style="font-size: 58px;">내일의 교시가 뜨는 자리입니다!</div>
+      <div id="time3D" style="font-size: 50px; color: #00aaff;">내일의 시간표가 뜨는 자리입니다!</div>
+      <br><br>
+      <div style="font-size: 40px; color: black;">4반의 다음 수업일의 시간표</div>
+      <div id="time4C" style="font-size: 58px;">내일의 교시가 뜨는 자리입니다!</div>
+      <div id="time4D" style="font-size: 50px; color: #00aaff;">내일의 시간표가 뜨는 자리입니다!</div>
+      <br><br>
+      <div style="font-size: 40px; color: black;">5반의 다음 수업일의 시간표</div>
+      <div id="time5C" style="font-size: 58px;">내일의 교시가 뜨는 자리입니다!</div>
+      <div id="time5D" style="font-size: 50px; color: #00aaff;">내일의 시간표가 뜨는 자리입니다!</div>
+      <br><br>
+      <div style="font-size: 40px; color: black;">6반의 다음 수업일의 시간표</div>
+      <div id="time6C" style="font-size: 58px;">내일의 교시가 뜨는 자리입니다!</div>
+      <div id="time6D" style="font-size: 50px; color: #00aaff;">내일의 시간표가 뜨는 자리입니다!</div>
+      <br><br><br><br>
+      <p style="text-align: center; font-size: 30px;">Copyright © 2021 KimAin. 모든 권리 보유.</p>
+      <br><br><br><br>
+      <script>
+          var sj11 = ["영어", "컴그", "컴그", "한국", "과학", "음악", "HR"] // 1반 월
+          var sj12 = ["국어", "한국", "사회", "진로", "수학", "영어", "음악"] // 1반 화
+          var sj13 = ["사회", "체육", "과학", "진로", "상경", "CA"] // 1반 수
+          var sj14 = ["한국", "국어", "상경", "영어", "수학", "사회", "과학"] // 1반 목
+          var sj15 = ["국어", "컴그", "컴그", "수학", "음악", "상경", "체육"] // 1반 금
+
+          var sj21 = ["상경", "과학", "사회", "체육", "한국", "진로", "HR"] // 2반 월
+          var sj22 = ["컴그", "컴그", "미술", "수학", "상경", "과학", "영어"] // 2반 화
+          var sj23 = ["상경", "컴그", "컴그", "체육", "국어", "CA"] // 2반 수
+          var sj24 = ["미술", "수학", "사회", "국어", "과학", "영어", "한국"] // 2반 목
+          var sj25 = ["사회", "수학", "한국", "국어", "미술", "영어", "진로"] // 2반 금
+
+          var sj31 = ["컴시", "국어", "체육", "음악", "플밍", "플밍", "HR"] // 3반 월
+          var sj32 = ["과학", "국어", "수학", "진로", "사회", "사물", "사물"] // 3반 화
+          var sj33 = ["음악", "사회", "플밍", "플밍", "영어", "CA"] // 3반 수
+          var sj34 = ["영어", "수학", "진로", "과학", "체육", "국어", "컴시"] // 3반 목
+          var sj35 = ["과학", "음악", "영어", "사회", "수학", "컴시", "사물"] // 3반 금
+
+          var sj41 = ["수학", "사물", "과학", "사회", "음악", "영어", "HR"] // 4반 월
+          var sj42 = ["플밍", "플밍", "과학", "체육", "국어", "사회", "컴시"] // 4반 화
+          var sj43 = ["영어", "수학", "국어", "사회", "음악", "CA"] // 4반 수
+          var sj44 = ["플밍", "플밍", "컴시", "수학", "사물", "사물", "진로"] // 4반 목
+          var sj45 = ["음악", "영어", "국어", "컴시", "체육", "과학", "진로"] // 4반 금
+
+          var sj51 = ["사회", "플밍", "플밍", "미술", "수학", "국어", "HR"] // 5반 월
+          var sj52 = ["사물", "사물", "컴시", "영어", "플밍", "플밍", "체육"] // 5반 화
+          var sj53 = ["국어", "컴시", "영어", "수학", "과학", "CA"] // 5반 수
+          var sj54 = ["사회", "과학", "체육", "진로", "미술", "컴시", "국어"] // 5반 목
+          var sj55 = ["수학", "미술", "과학", "사물", "영어", "사회", "진로"] // 5반 금
+
+          var sj61 = ["미술", "컴시", "국어", "수학", "영어", "체육", "HR"] // 6반 월
+          var sj62 = ["사회", "수학", "영어", "국어", "과학", "미술", "진로"] // 6반 화
+          var sj63 = ["과학", "사물", "사물", "진로", "체육", "CA"] // 6반 수
+          var sj64 = ["수학", "컴시", "영어", "사회", "플밍", "플밍", "미술"] // 6반 목
+          var sj65 = ["사물", "사회", "플밍", "플밍", "과학", "국어", "컴시"] // 6반 금
+
+          var today = new Date();
+
+          var day = today.getDay();
+
+          var timeBlockAs = ""
+          var timeBlockBs = ""
+
+          var timeBlock1 = ""
+          var timeBlock2 = ""
+          var timeBlock3 = ""
+          var timeBlock4 = ""
+          var timeBlock5 = ""
+          var timeBlock6 = ""
+
+          var timeBlocks1 = ""
+          var timeBlocks2 = ""
+          var timeBlocks3 = ""
+          var timeBlocks4 = ""
+          var timeBlocks5 = ""
+          var timeBlocks6 = ""
+
+          if(day == 1){ // 월요일
+              timeBlockAs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
+              timeBlockBs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
+              for(var i = 0; i < 7; i++){
+                  timeBlock1 = timeBlock1 + " " + sj11[i]
+                  timeBlock2 = timeBlock2 + " " + sj21[i]
+                  timeBlock3 = timeBlock3 + " " + sj31[i]
+                  timeBlock4 = timeBlock4 + " " + sj41[i]
+                  timeBlock5 = timeBlock5 + " " + sj51[i]
+                  timeBlock6 = timeBlock6 + " " + sj61[i]
+                  
+                  timeBlocks1 = timeBlocks1 + " " + sj12[i]
+                  timeBlocks2 = timeBlocks2 + " " + sj22[i]
+                  timeBlocks3 = timeBlocks3 + " " + sj32[i]
+                  timeBlocks4 = timeBlocks4 + " " + sj42[i]
+                  timeBlocks5 = timeBlocks5 + " " + sj52[i]
+                  timeBlocks6 = timeBlocks6 + " " + sj62[i]
               }
-              w.ChannelIOInitialized = true;
-              var s = document.createElement('script');
-              s.type = 'text/javascript';
-              s.async = true;
-              s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
-              s.charset = 'UTF-8';
-              var x = document.getElementsByTagName('script')[0];
-              x.parentNode.insertBefore(s, x);
-            }
-            if (document.readyState === 'complete') {
-              l();
-            } else if (window.attachEvent) {
-              window.attachEvent('onload', l);
-            } else {
-              window.addEventListener('DOMContentLoaded', l, false);
-              window.addEventListener('load', l, false);
-            }
-          })();
-          ChannelIO('boot', {
-            "pluginKey": "de7d5cbe-58d0-497d-8cd4-e98e2212997c"
-          });
-        </script>
-        <!-- End Channel Plugin -->
-        <br><br><br><br><br><br>
-        <h1 style="color: gray; text-align: center; font-size: 100px; line-height: 100px; font-family: 'Noto Sans KR', sans-serif;">Welcome to</h1>
-        <h1 style="color: rgb(244, 11, 126); text-align: center; font-size: 100px; line-height: 100px; font-family: 'Noto Sans KR', sans-serif;">Dimi Time Table</h1>
-        <!-- <h1 style="color: rgb(244, 11, 126); text-align: center; font-size: 50px; line-height: 70px; font-family: 'Noto Sans KR', sans-serif;">Design by KimAin in GitHub</h1> -->
-        <br><br><br><br><br><br>
-        <div style="font-size: 30px;">온라인 수업 자동 연결 기능은 디미고 학생인증 후 사용 가능합니다.</div>
-        <div style="font-size: 30px;">해방 외의 과는 지원하지 않고, 수업 링크 유출 시 처벌될 수 있습니다.</div>
-        <br>
-        <div style="text-align: center;">
-            <form method="post" action="https://api.findflag.kr/dimigo/realStudent">
-                <input type="text" placeholder="학번" name="number" style="font-size: 40px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
-                <input type="text" placeholder="이름" name="name" style="font-size: 40px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
-                <br><br>
-                <input type="submit" value="학생인증 >" class="btn btn-warning" style="font-size: 40px; font-family: 'Noto Sans KR', sans-serif; color: black;">
-                <a href="https://hcs.eduro.go.kr/" target="_blank" class="btn btn-warning" style="font-size: 40px; font-family: 'Noto Sans KR', sans-serif; color: black;">자가진단 참여하기 ></a>
-            </form>
-        </div>
-        <br><br><br><br>
-        <div style="font-size: 40px; color: black;">1반의 오늘의 시간표</div>
-        <div id="time1A" style="font-size: 58px;">오늘의 교시가 뜨는 자리입니다!</div>
-        <div id="time1B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
-        <br><br>
-        <div style="font-size: 40px; color: black;">2반의 오늘의 시간표</div>
-        <div id="time2A" style="font-size: 58px;">오늘의 교시가 뜨는 자리입니다!</div>
-        <div id="time2B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
-        <br><br>
-        <div style="font-size: 40px; color: black;">3반의 오늘의 시간표</div>
-        <div id="time3A" style="font-size: 58px;">오늘의 교시가 뜨는 자리입니다!</div>
-        <div id="time3B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
-        <br><br>
-        <div style="font-size: 40px; color: black;">4반의 오늘의 시간표</div>
-        <div id="time4A" style="font-size: 58px;">오늘의 교시가 뜨는 자리입니다!</div>
-        <div id="time4B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
-        <br><br>
-        <div style="font-size: 40px; color: black;">5반의 오늘의 시간표</div>
-        <div id="time5A" style="font-size: 58px;">오늘의 교시가 뜨는 자리입니다!</div>
-        <div id="time5B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
-        <br><br>
-        <div style="font-size: 40px; color: black;">6반의 오늘의 시간표</div>
-        <div id="time6A" style="font-size: 58px;">오늘의 교시가 뜨는 자리입니다!</div>
-        <div id="time6B" style="font-size: 50px; color: rgb(244, 11, 126);">오늘의 시간표가 뜨는 자리입니다!</div>
-        <br><br><br><br><br><br>
-        <div style="font-size: 40px; color: black;">1반의 다음 수업일의 시간표</div>
-        <div id="time1C" style="font-size: 58px;">내일의 교시가 뜨는 자리입니다!</div>
-        <div id="time1D" style="font-size: 50px; color: rgb(244, 11, 126);">내일의 시간표가 뜨는 자리입니다!</div>
-        <br><br>
-        <div style="font-size: 40px; color: black;">2반의 다음 수업일의 시간표</div>
-        <div id="time2C" style="font-size: 58px;">내일의 교시가 뜨는 자리입니다!</div>
-        <div id="time2D" style="font-size: 50px; color: rgb(244, 11, 126);">내일의 시간표가 뜨는 자리입니다!</div>
-        <br><br>
-        <div style="font-size: 40px; color: black;">3반의 다음 수업일의 시간표</div>
-        <div id="time3C" style="font-size: 58px;">내일의 교시가 뜨는 자리입니다!</div>
-        <div id="time3D" style="font-size: 50px; color: rgb(244, 11, 126);">내일의 시간표가 뜨는 자리입니다!</div>
-        <br><br>
-        <div style="font-size: 40px; color: black;">4반의 다음 수업일의 시간표</div>
-        <div id="time4C" style="font-size: 58px;">내일의 교시가 뜨는 자리입니다!</div>
-        <div id="time4D" style="font-size: 50px; color: rgb(244, 11, 126);">내일의 시간표가 뜨는 자리입니다!</div>
-        <br><br>
-        <div style="font-size: 40px; color: black;">5반의 다음 수업일의 시간표</div>
-        <div id="time5C" style="font-size: 58px;">내일의 교시가 뜨는 자리입니다!</div>
-        <div id="time5D" style="font-size: 50px; color: rgb(244, 11, 126);">내일의 시간표가 뜨는 자리입니다!</div>
-        <br><br>
-        <div style="font-size: 40px; color: black;">6반의 다음 수업일의 시간표</div>
-        <div id="time6C" style="font-size: 58px;">내일의 교시가 뜨는 자리입니다!</div>
-        <div id="time6D" style="font-size: 50px; color: rgb(244, 11, 126);">내일의 시간표가 뜨는 자리입니다!</div>
-        <br><br><br><br>
-        <p style="text-align: center; font-size: 30px;">Copyright © 2021 KimAin. 모든 권리 보유.</p>
-        <br><br><br><br>
-        <script>
+          } else if(day == 2){ // 화요일
+              timeBlockAs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
+              timeBlockBs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6"
+              for(var i = 0; i < 7; i++){
+                  timeBlock1 = timeBlock1 + " " + sj12[i]
+                  timeBlock2 = timeBlock2 + " " + sj22[i]
+                  timeBlock3 = timeBlock3 + " " + sj32[i]
+                  timeBlock4 = timeBlock4 + " " + sj42[i]
+                  timeBlock5 = timeBlock5 + " " + sj52[i]
+                  timeBlock6 = timeBlock6 + " " + sj62[i]
+              }
+              for(var i = 0; i < 6; i++){
+                  timeBlocks1 = timeBlocks1 + " " + sj13[i]
+                  timeBlocks2 = timeBlocks2 + " " + sj23[i]
+                  timeBlocks3 = timeBlocks3 + " " + sj33[i]
+                  timeBlocks4 = timeBlocks4 + " " + sj43[i]
+                  timeBlocks5 = timeBlocks5 + " " + sj53[i]
+                  timeBlocks6 = timeBlocks6 + " " + sj63[i]
+              }
+          } else if(day == 3){ // 수요일
+              timeBlockAs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6"
+              timeBlockBs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
+              for(var i = 0; i < 6; i++){
+                  timeBlock1 = timeBlock1 + " " + sj13[i]
+                  timeBlock2 = timeBlock2 + " " + sj23[i]
+                  timeBlock3 = timeBlock3 + " " + sj33[i]
+                  timeBlock4 = timeBlock4 + " " + sj43[i]
+                  timeBlock5 = timeBlock5 + " " + sj53[i]
+                  timeBlock6 = timeBlock6 + " " + sj63[i]
+              }
+              for(var i = 0; i < 7; i++){
+                  timeBlocks1 = timeBlocks1 + " " + sj14[i]
+                  timeBlocks2 = timeBlocks2 + " " + sj24[i]
+                  timeBlocks3 = timeBlocks3 + " " + sj34[i]
+                  timeBlocks4 = timeBlocks4 + " " + sj44[i]
+                  timeBlocks5 = timeBlocks5 + " " + sj54[i]
+                  timeBlocks6 = timeBlocks6 + " " + sj64[i]
+              }
+          } else if(day == 4){ // 목요일
+              timeBlockAs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
+              timeBlockBs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
+              for(var i = 0; i < 7; i++){
+                  timeBlock1 = timeBlock1 + " " + sj14[i]
+                  timeBlock2 = timeBlock2 + " " + sj24[i]
+                  timeBlock3 = timeBlock3 + " " + sj34[i]
+                  timeBlock4 = timeBlock4 + " " + sj44[i]
+                  timeBlock5 = timeBlock5 + " " + sj54[i]
+                  timeBlock6 = timeBlock6 + " " + sj64[i]
 
-            var sj11 = ["영어", "컴그", "컴그", "한국", "과학", "음악", "HR"] // 1반 월
-            var sj12 = ["국어", "한국", "사회", "진로", "수학", "영어", "음악"] // 1반 화
-            var sj13 = ["사회", "체육", "과학", "진로", "상경", "CA"] // 1반 수
-            var sj14 = ["한국", "국어", "상경", "영어", "수학", "사회", "과학"] // 1반 목
-            var sj15 = ["국어", "컴그", "컴그", "수학", "음악", "상경", "체육"] // 1반 금
+                  timeBlocks1 = timeBlocks1 + " " + sj15[i]
+                  timeBlocks2 = timeBlocks2 + " " + sj25[i]
+                  timeBlocks3 = timeBlocks3 + " " + sj35[i]
+                  timeBlocks4 = timeBlocks4 + " " + sj45[i]
+                  timeBlocks5 = timeBlocks5 + " " + sj55[i]
+                  timeBlocks6 = timeBlocks6 + " " + sj65[i]
+              }
+          } else if(day == 5){ // 금요일
+              timeBlockAs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
+              timeBlockBs = "Wa!"
+              for(var i = 0; i < 7; i++){
+                  timeBlock1 = timeBlock1 + " " + sj15[i]
+                  timeBlock2 = timeBlock2 + " " + sj25[i]
+                  timeBlock3 = timeBlock3 + " " + sj35[i]
+                  timeBlock4 = timeBlock4 + " " + sj45[i]
+                  timeBlock5 = timeBlock5 + " " + sj55[i]
+                  timeBlock6 = timeBlock6 + " " + sj65[i]
+              }
+              timeBlocks1 = "내일은 수업이 없는 날입니다!"
+              timeBlocks2 = "내일은 수업이 없는 날입니다!"
+              timeBlocks3 = "내일은 수업이 없는 날입니다!"
+              timeBlocks4 = "내일은 수업이 없는 날입니다!"
+              timeBlocks5 = "내일은 수업이 없는 날입니다!"
+              timeBlocks6 = "내일은 수업이 없는 날입니다!"
+          } else{ // 토요일, 일요일
+              timeBlockAs = "Wa!"
+              timeBlockBs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
+              timeBlock1 = "오늘은 수업이 없는 날입니다!"
+              timeBlock2 = "오늘은 수업이 없는 날입니다!"
+              timeBlock3 = "오늘은 수업이 없는 날입니다!"
+              timeBlock4 = "오늘은 수업이 없는 날입니다!"
+              timeBlock5 = "오늘은 수업이 없는 날입니다!"
+              timeBlock6 = "오늘은 수업이 없는 날입니다!"
 
-            var sj21 = ["상경", "과학", "사회", "체육", "한국", "진로", "HR"] // 2반 월
-            var sj22 = ["컴그", "컴그", "미술", "수학", "상경", "과학", "영어"] // 2반 화
-            var sj23 = ["상경", "컴그", "컴그", "체육", "국어", "CA"] // 2반 수
-            var sj24 = ["미술", "수학", "사회", "국어", "과학", "영어", "한국"] // 2반 목
-            var sj25 = ["사회", "수학", "한국", "국어", "미술", "영어", "진로"] // 2반 금
+              for(var i = 0; i < 7; i++){
+                  timeBlocks1 = timeBlocks1 + " " + sj11[i]
+                  timeBlocks2 = timeBlocks2 + " " + sj21[i]
+                  timeBlocks3 = timeBlocks3 + " " + sj31[i]
+                  timeBlocks4 = timeBlocks4 + " " + sj41[i]
+                  timeBlocks5 = timeBlocks5 + " " + sj51[i]
+                  timeBlocks6 = timeBlocks6 + " " + sj61[i]
+              }
+          }
 
-            var sj31 = ["컴시", "국어", "체육", "음악", "플밍", "플밍", "HR"] // 3반 월
-            var sj32 = ["과학", "국어", "수학", "진로", "사회", "사물", "사물"] // 3반 화
-            var sj33 = ["음악", "사회", "플밍", "플밍", "영어", "CA"] // 3반 수
-            var sj34 = ["영어", "수학", "진로", "과학", "체육", "국어", "컴시"] // 3반 목
-            var sj35 = ["과학", "음악", "영어", "사회", "수학", "컴시", "사물"] // 3반 금
+          document.getElementById("time1A").innerHTML = timeBlockAs;
+          document.getElementById("time2A").innerHTML = timeBlockAs;
+          document.getElementById("time3A").innerHTML = timeBlockAs;
+          document.getElementById("time4A").innerHTML = timeBlockAs;
+          document.getElementById("time5A").innerHTML = timeBlockAs;
+          document.getElementById("time6A").innerHTML = timeBlockAs;
 
-            var sj41 = ["수학", "사물", "과학", "사회", "음악", "영어", "HR"] // 4반 월
-            var sj42 = ["플밍", "플밍", "과학", "체육", "국어", "사회", "컴시"] // 4반 화
-            var sj43 = ["영어", "수학", "국어", "사회", "음악", "CA"] // 4반 수
-            var sj44 = ["플밍", "플밍", "컴시", "수학", "사물", "사물", "진로"] // 4반 목
-            var sj45 = ["음악", "영어", "국어", "컴시", "체육", "과학", "진로"] // 4반 금
+          document.getElementById("time1C").innerHTML = timeBlockBs;
+          document.getElementById("time2C").innerHTML = timeBlockBs;
+          document.getElementById("time3C").innerHTML = timeBlockBs;
+          document.getElementById("time4C").innerHTML = timeBlockBs;
+          document.getElementById("time5C").innerHTML = timeBlockBs;
+          document.getElementById("time6C").innerHTML = timeBlockBs;
 
-            var sj51 = ["사회", "플밍", "플밍", "미술", "수학", "국어", "HR"] // 5반 월
-            var sj52 = ["사물", "사물", "컴시", "영어", "플밍", "플밍", "체육"] // 5반 화
-            var sj53 = ["국어", "컴시", "영어", "수학", "과학", "CA"] // 5반 수
-            var sj54 = ["사회", "과학", "체육", "진로", "미술", "컴시", "국어"] // 5반 목
-            var sj55 = ["수학", "미술", "과학", "사물", "영어", "사회", "진로"] // 5반 금
+          document.getElementById("time1B").innerHTML = timeBlock1;
+          document.getElementById("time2B").innerHTML = timeBlock2;
+          document.getElementById("time3B").innerHTML = timeBlock3;
+          document.getElementById("time4B").innerHTML = timeBlock4;
+          document.getElementById("time5B").innerHTML = timeBlock5;
+          document.getElementById("time6B").innerHTML = timeBlock6;
 
-            var sj61 = ["미술", "컴시", "국어", "수학", "영어", "체육", "HR"] // 6반 월
-            var sj62 = ["사회", "수학", "영어", "국어", "과학", "미술", "진로"] // 6반 화
-            var sj63 = ["과학", "사물", "사물", "진로", "체육", "CA"] // 6반 수
-            var sj64 = ["수학", "컴시", "영어", "사회", "플밍", "플밍", "미술"] // 6반 목
-            var sj65 = ["사물", "사회", "플밍", "플밍", "과학", "국어", "컴시"] // 6반 금
+          document.getElementById("time1D").innerHTML = timeBlocks1;
+          document.getElementById("time2D").innerHTML = timeBlocks2;
+          document.getElementById("time3D").innerHTML = timeBlocks3;
+          document.getElementById("time4D").innerHTML = timeBlocks4;
+          document.getElementById("time5D").innerHTML = timeBlocks5;
+          document.getElementById("time6D").innerHTML = timeBlocks6;
 
-            var today = new Date();
-
-            var day = today.getDay();
-
-            var timeBlockAs = ""
-            var timeBlockBs = ""
-
-            var timeBlock1 = ""
-            var timeBlock2 = ""
-            var timeBlock3 = ""
-            var timeBlock4 = ""
-            var timeBlock5 = ""
-            var timeBlock6 = ""
-
-            var timeBlocks1 = ""
-            var timeBlocks2 = ""
-            var timeBlocks3 = ""
-            var timeBlocks4 = ""
-            var timeBlocks5 = ""
-            var timeBlocks6 = ""
-
-            if(day == 1){ // 월요일
-                timeBlockAs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
-                timeBlockBs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
-                for(var i = 0; i < 7; i++){
-                    timeBlock1 = timeBlock1 + " " + sj11[i]
-                    timeBlock2 = timeBlock2 + " " + sj21[i]
-                    timeBlock3 = timeBlock3 + " " + sj31[i]
-                    timeBlock4 = timeBlock4 + " " + sj41[i]
-                    timeBlock5 = timeBlock5 + " " + sj51[i]
-                    timeBlock6 = timeBlock6 + " " + sj61[i]
-                    
-                    timeBlocks1 = timeBlocks1 + " " + sj12[i]
-                    timeBlocks2 = timeBlocks2 + " " + sj22[i]
-                    timeBlocks3 = timeBlocks3 + " " + sj32[i]
-                    timeBlocks4 = timeBlocks4 + " " + sj42[i]
-                    timeBlocks5 = timeBlocks5 + " " + sj52[i]
-                    timeBlocks6 = timeBlocks6 + " " + sj62[i]
-                }
-            } else if(day == 2){ // 화요일
-                timeBlockAs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
-                timeBlockBs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6"
-                for(var i = 0; i < 7; i++){
-                    timeBlock1 = timeBlock1 + " " + sj12[i]
-                    timeBlock2 = timeBlock2 + " " + sj22[i]
-                    timeBlock3 = timeBlock3 + " " + sj32[i]
-                    timeBlock4 = timeBlock4 + " " + sj42[i]
-                    timeBlock5 = timeBlock5 + " " + sj52[i]
-                    timeBlock6 = timeBlock6 + " " + sj62[i]
-                }
-                for(var i = 0; i < 6; i++){
-                    timeBlocks1 = timeBlocks1 + " " + sj13[i]
-                    timeBlocks2 = timeBlocks2 + " " + sj23[i]
-                    timeBlocks3 = timeBlocks3 + " " + sj33[i]
-                    timeBlocks4 = timeBlocks4 + " " + sj43[i]
-                    timeBlocks5 = timeBlocks5 + " " + sj53[i]
-                    timeBlocks6 = timeBlocks6 + " " + sj63[i]
-                }
-            } else if(day == 3){ // 수요일
-                timeBlockAs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6"
-                timeBlockBs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
-                for(var i = 0; i < 6; i++){
-                    timeBlock1 = timeBlock1 + " " + sj13[i]
-                    timeBlock2 = timeBlock2 + " " + sj23[i]
-                    timeBlock3 = timeBlock3 + " " + sj33[i]
-                    timeBlock4 = timeBlock4 + " " + sj43[i]
-                    timeBlock5 = timeBlock5 + " " + sj53[i]
-                    timeBlock6 = timeBlock6 + " " + sj63[i]
-                }
-                for(var i = 0; i < 7; i++){
-                    timeBlocks1 = timeBlocks1 + " " + sj14[i]
-                    timeBlocks2 = timeBlocks2 + " " + sj24[i]
-                    timeBlocks3 = timeBlocks3 + " " + sj34[i]
-                    timeBlocks4 = timeBlocks4 + " " + sj44[i]
-                    timeBlocks5 = timeBlocks5 + " " + sj54[i]
-                    timeBlocks6 = timeBlocks6 + " " + sj64[i]
-                }
-            } else if(day == 4){ // 목요일
-                timeBlockAs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
-                timeBlockBs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
-                for(var i = 0; i < 7; i++){
-                    timeBlock1 = timeBlock1 + " " + sj14[i]
-                    timeBlock2 = timeBlock2 + " " + sj24[i]
-                    timeBlock3 = timeBlock3 + " " + sj34[i]
-                    timeBlock4 = timeBlock4 + " " + sj44[i]
-                    timeBlock5 = timeBlock5 + " " + sj54[i]
-                    timeBlock6 = timeBlock6 + " " + sj64[i]
-
-                    timeBlocks1 = timeBlocks1 + " " + sj15[i]
-                    timeBlocks2 = timeBlocks2 + " " + sj25[i]
-                    timeBlocks3 = timeBlocks3 + " " + sj35[i]
-                    timeBlocks4 = timeBlocks4 + " " + sj45[i]
-                    timeBlocks5 = timeBlocks5 + " " + sj55[i]
-                    timeBlocks6 = timeBlocks6 + " " + sj65[i]
-                }
-            } else if(day == 5){ // 금요일
-                timeBlockAs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
-                timeBlockBs = "Wa!"
-                for(var i = 0; i < 7; i++){
-                    timeBlock1 = timeBlock1 + " " + sj15[i]
-                    timeBlock2 = timeBlock2 + " " + sj25[i]
-                    timeBlock3 = timeBlock3 + " " + sj35[i]
-                    timeBlock4 = timeBlock4 + " " + sj45[i]
-                    timeBlock5 = timeBlock5 + " " + sj55[i]
-                    timeBlock6 = timeBlock6 + " " + sj65[i]
-                }
-                timeBlocks1 = "내일은 수업이 없는 날입니다!"
-                timeBlocks2 = "내일은 수업이 없는 날입니다!"
-                timeBlocks3 = "내일은 수업이 없는 날입니다!"
-                timeBlocks4 = "내일은 수업이 없는 날입니다!"
-                timeBlocks5 = "내일은 수업이 없는 날입니다!"
-                timeBlocks6 = "내일은 수업이 없는 날입니다!"
-            } else{ // 토요일, 일요일
-                timeBlockAs = "Wa!"
-                timeBlockBs = "1 ㅤ2 ㅤ3 ㅤ4 ㅤ5 ㅤ6 ㅤ7"
-                timeBlock1 = "오늘은 수업이 없는 날입니다!"
-                timeBlock2 = "오늘은 수업이 없는 날입니다!"
-                timeBlock3 = "오늘은 수업이 없는 날입니다!"
-                timeBlock4 = "오늘은 수업이 없는 날입니다!"
-                timeBlock5 = "오늘은 수업이 없는 날입니다!"
-                timeBlock6 = "오늘은 수업이 없는 날입니다!"
-
-                for(var i = 0; i < 7; i++){
-                    timeBlocks1 = timeBlocks1 + " " + sj11[i]
-                    timeBlocks2 = timeBlocks2 + " " + sj21[i]
-                    timeBlocks3 = timeBlocks3 + " " + sj31[i]
-                    timeBlocks4 = timeBlocks4 + " " + sj41[i]
-                    timeBlocks5 = timeBlocks5 + " " + sj51[i]
-                    timeBlocks6 = timeBlocks6 + " " + sj61[i]
-                }
-            }
-
-            document.getElementById("time1A").innerHTML = timeBlockAs;
-            document.getElementById("time2A").innerHTML = timeBlockAs;
-            document.getElementById("time3A").innerHTML = timeBlockAs;
-            document.getElementById("time4A").innerHTML = timeBlockAs;
-            document.getElementById("time5A").innerHTML = timeBlockAs;
-            document.getElementById("time6A").innerHTML = timeBlockAs;
-
-            document.getElementById("time1C").innerHTML = timeBlockBs;
-            document.getElementById("time2C").innerHTML = timeBlockBs;
-            document.getElementById("time3C").innerHTML = timeBlockBs;
-            document.getElementById("time4C").innerHTML = timeBlockBs;
-            document.getElementById("time5C").innerHTML = timeBlockBs;
-            document.getElementById("time6C").innerHTML = timeBlockBs;
-
-            document.getElementById("time1B").innerHTML = timeBlock1;
-            document.getElementById("time2B").innerHTML = timeBlock2;
-            document.getElementById("time3B").innerHTML = timeBlock3;
-            document.getElementById("time4B").innerHTML = timeBlock4;
-            document.getElementById("time5B").innerHTML = timeBlock5;
-            document.getElementById("time6B").innerHTML = timeBlock6;
-
-            document.getElementById("time1D").innerHTML = timeBlocks1;
-            document.getElementById("time2D").innerHTML = timeBlocks2;
-            document.getElementById("time3D").innerHTML = timeBlocks3;
-            document.getElementById("time4D").innerHTML = timeBlocks4;
-            document.getElementById("time5D").innerHTML = timeBlocks5;
-            document.getElementById("time6D").innerHTML = timeBlocks6;
-
-        </script>
+      </script>
     </body>
 </html>
