@@ -67,6 +67,39 @@
             .pd_top_80{padding-top:80px;}
             .wrap .top_fix_zone{height:60px; background:rgb(244, 11, 126); line-height:60px;}
             .wrap .top_fix_zones{height:60px; background:#00aaff; line-height:60px;}
+            button {
+                height: 2.5em;
+                cursor: pointer;
+            }
+
+            #popup {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, .7);
+                z-index: 1;
+            }
+
+            #popup.hide {
+                display: none;
+            }
+
+            #popup.has-filter {
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+            }
+
+            #popup .content {
+                padding: 20px;
+                background: #fff;
+                border-radius: 5px;
+                box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+            }
         </style> 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     </head>
@@ -122,7 +155,30 @@
             function but_click(){
                 document.getElementById("loading").style.display = "block";
             }
+            function showPopup(hasFilter) {
+                const popup = document.querySelector('#popup');
+
+                if (hasFilter) {
+                    popup.classList.add('has-filter');
+                } else {
+                    popup.classList.remove('has-filter');
+                }
+
+                popup.classList.remove('hide');
+            }
+
+            function closePopup() {
+                const popup = document.querySelector('#popup');
+                popup.classList.add('hide');
+            }
         </script>
+        <div id="popup">
+            <div class="content">
+                <p>Dimitimes는 2학기 시간표를 준비하고, 모든 반의 온라인 수업 연결을 지원하기 위해 재단장 중이에요!</p>
+                <p>지금은 재단장 중이라 접속이 어려워요… 하지만 안심하세요! 월요일 새벽부터는 온라인 수업 연결이 정상적으로 작동할거예요!</p>
+                <input onclick="closePopup()" type="submit" value="확인" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
+            </div>
+            </div>
         <div class="wrap">
             <div class="top_fix_zones" id="topBar">
                 <a style="color: white;">여러분의 의견으로 만든 UI 2.0 Design으로 업데이트되었습니다!</a>
@@ -148,7 +204,7 @@
                 <br>
                 <input type="text" placeholder="학번" name="number" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
                 <input type="text" placeholder="이름" name="name" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
-                <input onclick="but_click()" type="submit" value="학생인증 >" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
+                <input onclick="showPopup(true)" type="submit" value="학생인증 >" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
                 <br>
                 <i style="font-size: 20px; padding: 0px; margin: 0px;" class="fas fa-question-circle">.</i>
                 <h style="font-size: 20px; padding: 0px; margin: 0px;">학생인증을 눌렀을 때 오류코드가 뜬다면 우측 하단 채널톡을 통해 연락주세요.</a><br>
