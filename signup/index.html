@@ -71,35 +71,6 @@
                 height: 2.5em;
                 cursor: pointer;
             }
-
-            #popup {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, .7);
-                z-index: 1;
-            }
-
-            #popup.hide {
-                display: none;
-            }
-
-            #popup.has-filter {
-                backdrop-filter: blur(4px);
-                -webkit-backdrop-filter: blur(4px);
-            }
-
-            #popup .content {
-                padding: 20px;
-                background: #fff;
-                border-radius: 5px;
-                box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
-            }
         </style> 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     </head>
@@ -152,34 +123,6 @@
             <div class="circle"></div>
         </div>
         <script>
-            function but_click(){
-                document.getElementById("loading").style.display = "block";
-            }
-            function showPopup(hasFilter) {
-                const popup = document.querySelector('#popup');
-
-                if (hasFilter) {
-                    popup.classList.add('has-filter');
-                } else {
-                    popup.classList.remove('has-filter');
-                }
-
-                popup.classList.remove('hide');
-            }
-
-            function closePopup() {
-                const popup = document.querySelector('#popup');
-                popup.classList.add('hide');
-            }
-        </script>
-        <div id="popup" class="hide" style="word-break: keep-all;">
-            <div class="content">
-                <p>Dimitimes는 2학기 시간표를 준비하고, 모든 반의 온라인 수업 연결을 지원하기 위해 재단장 중이에요!</p>
-                <p>지금은 재단장 중이라 온라인 수업 연결 기능이 작동하지 않아요.. 하지만 안심하세요! 월요일 새벽부터는 온라인 수업 연결이 정상적으로 작동할거예요!</p>
-                <input onclick="closePopup()" type="submit" value="확인" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
-            </div>
-        </div>
-        <script>
             showPopup(true)
         </script>
         <div class="wrap">
@@ -197,9 +140,6 @@
         <h1 style="color: rgb(244, 11, 126); text-align: center; font-size: 120px; line-height: 100px; font-family: 'Noto Sans KR', sans-serif;">Dimitimes</h1>
         <p style="font-size: 30px; padding-left: 300px;">with UI 2.0 Design</p>
         <!-- <h1 style="color: rgb(244, 11, 126); text-align: center; font-size: 50px; line-height: 70px; font-family: 'Noto Sans KR', sans-serif;">Design by KimAin in GitHub</h1> -->
-        <br><br><br>
-        <div style="font-size: 25px;">온라인 수업 자동 연결 기능은 디미고 학생인증 후 사용 가능합니다.</div>
-        <div style="font-size: 25px;">아직은 해킹방어과만 지원하고, 수업 링크 유출 시 처벌될 수 있습니다.</div>
         <br><br><br><br>
         <div style="text-align: center;">
             <form action="https://api.findflag.kr/dimigo/realStudent" method="POST">
@@ -211,8 +151,7 @@
                 <input onclick="showPopup(true)" type="submit" value="학생 등록 >" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
                 <br>
                 <i style="font-size: 20px; padding: 0px; margin: 0px;" class="fas fa-question-circle">.</i>
-                <h style="font-size: 20px; padding: 0px; margin: 0px;">학생인증을 눌렀을 때 오류코드가 뜬다면 우측 하단 채널톡을 통해 연락주세요.</a><br>
-                <h style="font-size: 20px; color: #00aaff;">*좋은 소식입니다! 곧 다른 과도 온라인 수업 연결이 가능해질 예정입니다!</a>
+                <h style="font-size: 20px; padding: 0px; margin: 0px;">학생 등록을 눌렀을 때 오류코드가 뜬다면 우측 하단 채널톡을 통해 연락주세요.</a><br>
             </form>
         </div>
         <br><br><br><br>
