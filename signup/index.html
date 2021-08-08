@@ -1,1 +1,221 @@
-hello world
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dimi Time Table</title>
+        <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HF7JB30096"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HF7JB30096');
+        </script>
+        <script data-ad-client="ca-pub-8092137443918299" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Noto+Sans+KR:wght@900&display=swap');
+            body {
+                text-align: center;
+            }
+            div {
+                text-align: center;
+                font-size: 50px;
+                font-family: 'Noto Sans KR', sans-serif;
+                color: gray;
+            }
+            h1 {
+                text-align: center;
+                font-size: 100px;
+                line-height: 60px;
+                font-family: 'Noto Sans KR', sans-serif;
+            }
+            p {
+                text-align: center;
+                font-size: 20px;
+                font-family: 'Noto Sans KR', sans-serif;
+                color: gray;
+            }
+            a {
+                text-align: center;
+                font-size: 30px;
+                font-family: 'Noto Sans KR', sans-serif;
+                color: rgb(43, 128, 255);
+                text-decoration: none;
+            }
+            input {
+                text-align: center;
+                font-size: 40px;
+                font-family: 'Noto Sans KR', sans-serif;
+                color: black;
+            }
+            .loadingBox .circle {position:fixed; left:50%; top:50%; transform:translate(-50%, -50%); width:100px; height:100px; border:10px solid rgb(244, 11, 126); border-top:10px solid white; border-radius:50em; transition:all .2s;
+                animation-name:spinCircle;
+                animation-duration:.8s;
+                animation-iteration-count:infinite;
+                animation-timing-function:linear;
+            }
+            @keyframes spinCircle {
+                from {
+                    transform:translate(-50%, -50%) rotate(0);
+                }
+                to {
+                    transform:translate(-50%, -50%) rotate(360deg);
+                }
+            }
+            .wrap div{width:100%; text-align:center; font-size:20px; font-weight:700; color:#fff;}
+            .top_bar_fix{position:fixed; top:0; left:0; width:100%;}
+            .pd_top_80{padding-top:80px;}
+            .wrap .top_fix_zone{height:60px; background:rgb(244, 11, 126); line-height:60px;}
+            .wrap .top_fix_zones{height:60px; background:#00aaff; line-height:60px;}
+            button {
+                height: 2.5em;
+                cursor: pointer;
+            }
+
+            #popup {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, .7);
+                z-index: 1;
+            }
+
+            #popup.hide {
+                display: none;
+            }
+
+            #popup.has-filter {
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+            }
+
+            #popup .content {
+                padding: 20px;
+                background: #fff;
+                border-radius: 5px;
+                box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+            }
+        </style> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    </head>
+    <body>
+        <!-- Channel Plugin Scripts -->
+        <script>
+            (function() {
+            var w = window;
+            if (w.ChannelIO) {
+                return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+            }
+            var ch = function() {
+                ch.c(arguments);
+            };
+            ch.q = [];
+            ch.c = function(args) {
+                ch.q.push(args);
+            };
+            w.ChannelIO = ch;
+            function l() {
+                if (w.ChannelIOInitialized) {
+                return;
+                }
+                w.ChannelIOInitialized = true;
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+                s.charset = 'UTF-8';
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            }
+            if (document.readyState === 'complete') {
+                l();
+            } else if (window.attachEvent) {
+                window.attachEvent('onload', l);
+            } else {
+                window.addEventListener('DOMContentLoaded', l, false);
+                window.addEventListener('load', l, false);
+            }
+            })();
+            ChannelIO('boot', {
+            "pluginKey": "de7d5cbe-58d0-497d-8cd4-e98e2212997c"
+            });
+        </script>
+        <!-- End Channel Plugin -->
+        <div id="loading" class="loadingBox" style="display: none;">
+        <!-- <div id="loading" class="loadingBox"> -->
+            <div class="dim"></div>
+            <div class="circle"></div>
+        </div>
+        <script>
+            function but_click(){
+                document.getElementById("loading").style.display = "block";
+            }
+            function showPopup(hasFilter) {
+                const popup = document.querySelector('#popup');
+
+                if (hasFilter) {
+                    popup.classList.add('has-filter');
+                } else {
+                    popup.classList.remove('has-filter');
+                }
+
+                popup.classList.remove('hide');
+            }
+
+            function closePopup() {
+                const popup = document.querySelector('#popup');
+                popup.classList.add('hide');
+            }
+        </script>
+        <div id="popup" class="hide" style="word-break: keep-all;">
+            <div class="content">
+                <p>Dimitimes는 2학기 시간표를 준비하고, 모든 반의 온라인 수업 연결을 지원하기 위해 재단장 중이에요!</p>
+                <p>지금은 재단장 중이라 온라인 수업 연결 기능이 작동하지 않아요.. 하지만 안심하세요! 월요일 새벽부터는 온라인 수업 연결이 정상적으로 작동할거예요!</p>
+                <input onclick="closePopup()" type="submit" value="확인" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
+            </div>
+        </div>
+        <script>
+            showPopup(true)
+        </script>
+        <div class="wrap">
+            <div class="top_fix_zones" id="topBar">
+                <a style="color: white;">여러분의 의견으로 만든 UI 2.0 Design으로 업데이트되었습니다!</a>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="top_fix_zone" id="topBar">
+                <a style="color: #00aaff;" href="https://forms.gle/56gnNKD56gUQNY5GA" target='_blank'>여기에서 <i class="fas fa-external-link-alt"></i></a><a style="color: white;"> 디미타임즈 만족도 평가를 하고 있어요! 많은 참여 부탁드려요!</a>
+            </div>
+        </div>
+        <br><br><br><br><br>
+        <h1 style="color: gray; text-align: center; font-size: 80px; line-height: 100px; font-family: 'Noto Sans KR', sans-serif;">Welcome to</h1>
+        <h1 style="color: rgb(244, 11, 126); text-align: center; font-size: 120px; line-height: 100px; font-family: 'Noto Sans KR', sans-serif;">Dimitimes</h1>
+        <p style="font-size: 30px; padding-left: 300px;">with UI 2.0 Design</p>
+        <!-- <h1 style="color: rgb(244, 11, 126); text-align: center; font-size: 50px; line-height: 70px; font-family: 'Noto Sans KR', sans-serif;">Design by KimAin in GitHub</h1> -->
+        <br><br><br>
+        <div style="font-size: 25px;">온라인 수업 자동 연결 기능은 디미고 학생인증 후 사용 가능합니다.</div>
+        <div style="font-size: 25px;">아직은 해킹방어과만 지원하고, 수업 링크 유출 시 처벌될 수 있습니다.</div>
+        <br><br><br><br>
+        <div style="text-align: center;">
+            <form action="https://api.findflag.kr/dimigo/realStudent" method="POST">
+                <a style="color: rgb(244, 11, 126); font-size: 40px;">Dimitimes 학생 인증 등록</a>
+                <br>
+                <input type="text" placeholder="학번" name="number" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
+                <input type="text" placeholder="이름" name="name" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
+                <input onclick="showPopup(true)" type="submit" value="학생 등록 >" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
+                <br>
+                <i style="font-size: 20px; padding: 0px; margin: 0px;" class="fas fa-question-circle">.</i>
+                <h style="font-size: 20px; padding: 0px; margin: 0px;">학생인증을 눌렀을 때 오류코드가 뜬다면 우측 하단 채널톡을 통해 연락주세요.</a><br>
+                <h style="font-size: 20px; color: #00aaff;">*좋은 소식입니다! 곧 다른 과도 온라인 수업 연결이 가능해질 예정입니다!</a>
+            </form>
+        </div>
+        <br><br><br><br>
+        <p style="text-align: center; font-size: 25px;">Copyright © 2021 KimAin. 모든 권리 보유.</p>
+        <br><br><br><br>
+    </body>
+</html>
