@@ -172,19 +172,16 @@
                 popup.classList.add('hide');
             }
         </script>
-        <div id="popup" class="hide" style="word-break: keep-all;">
+<!--         <div id="popup" class="hide" style="word-break: keep-all;">
             <div class="content">
                 <p>Dimitimes는 2학기 시간표를 준비하고, 모든 반의 온라인 수업 연결을 지원하기 위해 재단장 중이에요!</p>
                 <p>지금은 재단장 중이라 온라인 수업 연결 기능이 작동하지 않아요.. 하지만 안심하세요! 월요일 새벽부터는 온라인 수업 연결이 정상적으로 작동할거예요!</p>
                 <input onclick="closePopup()" type="submit" value="확인" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
             </div>
-        </div>
-        <script>
-            showPopup(true)
-        </script>
+        </div> -->
         <div class="wrap">
             <div class="top_fix_zones" id="topBar">
-                <a style="color: white;">여러분의 의견으로 만든 UI 2.0 Design으로 업데이트되었습니다!</a>
+                <a style="color: white;">이제 드디어 1~4반 친구들도 온라인 수업 연결 서비스가 지원돼요!</a>
             </div>
         </div>
         <div class="wrap">
@@ -205,11 +202,10 @@
             <form action="https://api.findflag.kr/dimigo/realStudent" method="POST">
                 <a style="color: rgb(244, 11, 126); font-size: 40px;">온라인 수업 연결 로그인</a>
                 <br>
-                <div style="font-size: 25px; color: red;">1~4반 학생들! 로그인이 안된다면 <a href="https://dimitimes.github.io/signup" style="font-size: 25px;">여기에서</a> 학생 등록을 진행해주세요!</div>
+                <div style="font-size: 23px; color: red;">1~4반 학생들! 첫 사용이라면 <a href="https://dimitimes.github.io/signup" style="font-size: 23px;">여기에서</a> 학생 등록 후 사용해주세요!</div>
                 <input type="text" placeholder="학번" name="number" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
                 <input type="text" placeholder="이름" name="name" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
-                <input onclick="showPopup(true)" type="submit" value="학생인증 >" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
-<!--                 정상으로 돌릴 때 위에 input type을 submit으로 변경할 것 -->
+                <input onclick="but_click()" type="submit" value="학생인증 >" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
                 <br>
                 <i style="font-size: 20px; padding: 0px; margin: 0px;" class="fas fa-question-circle">.</i>
                 <h style="font-size: 20px; padding: 0px; margin: 0px;">학생인증을 눌렀을 때 오류코드가 뜬다면 우측 하단 채널톡을 통해 연락주세요.</a>
