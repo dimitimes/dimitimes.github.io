@@ -172,8 +172,6 @@
                 const popup = document.querySelector('#popup');
                 popup.classList.add('hide');
             }
-            
-            showPopup(true);
         </script>
         <div id="popup" class="hide" style="word-break: keep-all;">
             <div class="content">
@@ -183,6 +181,9 @@
                 <input onclick="closePopup()" type="submit" value="확인" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
             </div>
         </div>
+        <script>
+            showPopup(true);
+        </script>
         <div class="wrap">
             <div class="top_fix_zones" id="topBar">
                 <a style="color: white;">이제 드디어 1~4반 친구들도 온라인 수업 연결 서비스를 지원해요!</a>
