@@ -155,6 +155,7 @@
             function but_click(){
                 document.getElementById("loading").style.display = "block";
             }
+            
             function showPopup(hasFilter) {
                 const popup = document.querySelector('#popup');
 
@@ -171,6 +172,8 @@
                 const popup = document.querySelector('#popup');
                 popup.classList.add('hide');
             }
+            
+            showPopup(true);
         </script>
         <div id="popup" class="hide" style="word-break: keep-all;">
             <div class="content">
