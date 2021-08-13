@@ -173,20 +173,8 @@
                     document.getElementById("loading").style.display = "none";
                 } else{
                     $.get("https://api.findflag.kr/dimitimes/jaga/" + name + '/' + birth + '/' + password, function(jqXHR) {
-                        alert( "success" );
+                        alert( "무증상으로 자가진단을 완료했습니다.\n증상이 있을 경우, 꼭 자가진단 앱이나 웹을 실행하여 다시 자가진단에 참여해주세요." );
                         console.log("success >>> " + jqXHR)
-                    }, 'json' /* xml, text, script, html */)
-                    .done(function(jqXHR) {
-                        alert( "second success" );
-                        console.log("second success >>> " + jqXHR)
-                    })
-                    .fail(function(jqXHR) {
-                        alert( "error" );
-                        console.log("error >>> " + jqXHR)
-                    })
-                    .always(function(jqXHR) {
-                        alert( "finished" );
-                        console.log("finished >>> " + jqXHR)
                     });
                 }
             }
