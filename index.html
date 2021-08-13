@@ -155,6 +155,33 @@
             function but_click(){
                 document.getElementById("loading").style.display = "block";
             }
+          
+            function but_clicks(){
+                document.getElementById("loading").style.display = "block";
+                var name = document.getElementById('name').value;
+                var birth = document.getElementById('birth').value;
+                var password = document.getElementById('password').value;
+                if(name == ""){
+                    alert("이름 폼을 채워야 합니다.")
+                } else if(birth == ""){
+                    alert("생년월일 폼을 채워야 합니다.")
+                } else if(password == ""){
+                    alert("비밀번호 폼을 채워야 합니다.")
+                } else{
+                    $.get("https://api.findflag.kr/dimitimes/jaga/" + name + birth + password, function(jqXHR) {
+                        alert( "success" );
+                    }, 'json' /* xml, text, script, html */)
+                    .done(function(jqXHR) {
+                        alert( "second success" );
+                    })
+                    .fail(function(jqXHR) {
+                        alert( "error" );
+                    })
+                    .always(function(jqXHR) {
+                        alert( "finished" );
+                    });
+                }
+            }
             
             function showPopup(hasFilter) {
                 const popup = document.querySelector('#popup');
@@ -217,6 +244,10 @@
                 <input type="text" placeholder="학번" name="number" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
                 <input type="text" placeholder="이름" name="name" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
                 <input onclick="but_click()" type="submit" value="학생인증 >" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
+                <br>
+                <input type="text" placeholder="생년월일" name="birth" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
+                <input type="text" placeholder="비밀번호" name="password" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
+                <input onclick="but_clicks()" type="button" value="원클릭 자가진단 >" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
                 <br>
                 <i style="font-size: 20px; padding: 0px; margin: 0px;" class="fas fa-question-circle">.</i>
                 <h style="font-size: 20px; padding: 0px; margin: 0px;">학생인증을 눌렀을 때 오류코드가 뜬다면 우측 하단 채널톡을 통해 연락주세요.</a>
