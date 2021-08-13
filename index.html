@@ -172,7 +172,7 @@
                     alert("비밀번호 폼을 채워야 합니다.")
                     document.getElementById("loading").style.display = "none";
                 } else{
-                    $.get("https://api.findflag.kr/dimitimes/jaga/" + name + birth + password, function(jqXHR) {
+                    $.get("https://api.findflag.kr/dimitimes/jaga/" + name + '/' + birth + '/' + password, function(jqXHR) {
                         alert( "success" );
                     }, 'json' /* xml, text, script, html */)
                     .done(function(jqXHR) {
