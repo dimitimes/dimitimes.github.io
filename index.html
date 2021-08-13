@@ -163,10 +163,13 @@
                 var password = document.getElementById('password').value;
                 if(name == ""){
                     alert("이름 폼을 채워야 합니다.")
+                    document.getElementById("loading").style.display = "none";
                 } else if(birth == ""){
                     alert("생년월일 폼을 채워야 합니다.")
+                    document.getElementById("loading").style.display = "none";
                 } else if(password == ""){
                     alert("비밀번호 폼을 채워야 합니다.")
+                    document.getElementById("loading").style.display = "none";
                 } else{
                     $.get("https://api.findflag.kr/dimitimes/jaga/" + name + birth + password, function(jqXHR) {
                         alert( "success" );
