@@ -160,19 +160,15 @@
             function but_clicks(){
                 document.getElementById("loading").style.display = "block";
                 var name = document.getElementById('name').value;
-                var birth = document.getElementById('birth').value;
-                var password = document.getElementById('password').value;
+                var code = document.getElementById('code').value;
                 if(name == ""){
                     alert("이름 폼을 채워야 합니다.")
                     document.getElementById("loading").style.display = "none";
-                } else if(birth == ""){
-                    alert("생년월일 폼을 채워야 합니다.")
-                    document.getElementById("loading").style.display = "none";
-                } else if(password == ""){
-                    alert("비밀번호 폼을 채워야 합니다.")
+                } else if(code == ""){
+                    alert("자가진단 코드 폼을 채워야 합니다.")
                     document.getElementById("loading").style.display = "none";
                 } else{
-                    $.get("https://api.findflag.kr/dimitimes/jaga/" + name + '/' + birth + '/' + password, function(jqXHR) {
+                    $.get("https://api.findflag.kr/dimitimes/jaga/" + name + '/' + code.substring(0, 6) + '/' + code.substring(6, 10), function(jqXHR) {
                         if(jqXHR == "SUCCESS"){
                             alert( "무증상으로 자가진단을 완료했습니다.\n증상이 있을 경우, 꼭 자가진단 앱이나 웹을 실행하여 다시 자가진단에 참여해주세요." );
                             console.log("success >>> " + jqXHR)
@@ -248,8 +244,7 @@
                 <input type="text" placeholder="이름" id="name" name="name" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
                 <input onclick="but_click()" type="submit" value="학생인증 >" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
                 <br>
-                <input type="text" placeholder="생년월일" id="birth" name="birth" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
-                <input type="text" placeholder="비밀번호" id="password" name="password" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
+                <input type="text" placeholder="생년월일+비밀번호" id="code" name="code" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
                 <input onclick="but_clicks()" type="button" value="원클릭 자가진단 >" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
                 <br>
                 <i style="font-size: 20px; padding: 0px; margin: 0px;" class="fas fa-question-circle">.</i>
