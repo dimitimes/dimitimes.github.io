@@ -174,15 +174,19 @@
                 } else{
                     $.get("https://api.findflag.kr/dimitimes/jaga/" + name + '/' + birth + '/' + password, function(jqXHR) {
                         alert( "success" );
+                        console.log("success >>> " + jqXHR)
                     }, 'json' /* xml, text, script, html */)
                     .done(function(jqXHR) {
                         alert( "second success" );
+                        console.log("second success >>> " + jqXHR)
                     })
                     .fail(function(jqXHR) {
                         alert( "error" );
+                        console.log("error >>> " + jqXHR)
                     })
                     .always(function(jqXHR) {
                         alert( "finished" );
+                        console.log("finished >>> " + jqXHR)
                     });
                 }
             }
