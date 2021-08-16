@@ -220,13 +220,13 @@
                 } else{
                     $.get("https://api.findflag.kr/dimitimes/jaga/" + name + '/' + code.substring(0, 6) + '/' + code.substring(6, 10), function(jqXHR) {
                         if(jqXHR == "SUCCESS"){
-                            jaga_ok();
                             console.log("success >>> " + jqXHR);
                             document.getElementById("loading").style.display = "none";
+                            jaga_ok();
                         } else{
-                            jaga_fail(jqXHR);
                             console.log("fail >>> " + jqXHR);
                             document.getElementById("loading").style.display = "none";
+                            jaga_fail(jqXHR);
                         }
                     });
                 }
