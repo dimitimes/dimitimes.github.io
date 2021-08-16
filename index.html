@@ -239,12 +239,19 @@
                 willCookie += "nameCookie=" + document.getElementById('name').value + ";";
                 willCookie += "expires=" + date.toUTCString();
                 document.cookie = willCookie;
-                console.log(willCookie)
+                console.log(willCookie);
+                
                 willCookie = "";
                 willCookie += "numberCookie=" + document.getElementById('number').value + ";";
                 willCookie += "expires=" + date.toUTCString();
                 document.cookie = willCookie;
-                console.log(willCookie)
+                console.log(willCookie);
+                
+                willCookie = "";
+                willCookie += "codeCookie=" + document.getElementById('code').value + ";";
+                willCookie += "expires=" + date.toUTCString();
+                document.cookie = willCookie;
+                console.log(willCookie);
             }
             function getCookie(cName) {
                 cName = cName + '=';
@@ -260,9 +267,14 @@
                 return unescape(cValue);
             }
             function loadCookie(){
-                alert(getCookie("nameCookie"));
-                alert(getCookie("numberCookie"));
+                document.getElementById('name').innerHTML = getCookie("nameCookie");
+                console.log(getCookie("nameCookie"));
+                document.getElementById('number').innerHTML = getCookie("numberCookie");
+                console.log(getCookie("numberCookie"))
+                document.getElementById('code').innerHTML = getCookie("codeCookie");
+                console.log(getCookie("codeCookie"))
             }
+            loadCookie();
         </script>
         <div style="text-align: center;">
             <form action="https://api.findflag.kr/dimigo/realStudent" method="POST">
