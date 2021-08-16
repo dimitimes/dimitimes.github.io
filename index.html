@@ -146,6 +146,29 @@
             "pluginKey": "de7d5cbe-58d0-497d-8cd4-e98e2212997c"
             });
         </script>
+        <script>
+            function saveCookie(){
+                var date = new Date();
+                date.setDate(date.getDate() + 7);
+                var willCookie = "";
+                willCookie += "nameCookie=" + document.getElementById('name').value + ";";
+                willCookie += "expires=" + date.toUTCString();
+                document.cookie = willCookie;
+                console.log(willCookie);
+                
+                willCookie = "";
+                willCookie += "numberCookie=" + document.getElementById('number').value + ";";
+                willCookie += "expires=" + date.toUTCString();
+                document.cookie = willCookie;
+                console.log(willCookie);
+                
+                willCookie = "";
+                willCookie += "codeCookie=" + document.getElementById('code').value + ";";
+                willCookie += "expires=" + date.toUTCString();
+                document.cookie = willCookie;
+                console.log(willCookie);
+            }
+        </script>
         <!-- End Channel Plugin -->
         <div id="loading" class="loadingBox" style="display: none;">
         <!-- <div id="loading" class="loadingBox"> -->
@@ -154,10 +177,12 @@
         </div>
         <script>
             function but_click(){
+                saveCookie();
                 document.getElementById("loading").style.display = "block";
             }
             
             function but_clicks(){
+                saveCookie();
                 document.getElementById("loading").style.display = "block";
                 var name = document.getElementById('name').value;
                 var code = document.getElementById('code').value;
@@ -231,29 +256,6 @@
         <div style="font-size: 25px;">온라인 수업 자동 연결 기능은 디미고 학생인증 후 사용 가능합니다.</div>
         <div style="font-size: 25px;">1학년의 모든 과를 지원하고, 수업 링크 유출 시 처벌될 수 있습니다.</div>
         <br><br><br><br>
-        <script>
-            function saveCookie(){
-                var date = new Date();
-                date.setDate(date.getDate() + 7);
-                var willCookie = "";
-                willCookie += "nameCookie=" + document.getElementById('name').value + ";";
-                willCookie += "expires=" + date.toUTCString();
-                document.cookie = willCookie;
-                console.log(willCookie);
-                
-                willCookie = "";
-                willCookie += "numberCookie=" + document.getElementById('number').value + ";";
-                willCookie += "expires=" + date.toUTCString();
-                document.cookie = willCookie;
-                console.log(willCookie);
-                
-                willCookie = "";
-                willCookie += "codeCookie=" + document.getElementById('code').value + ";";
-                willCookie += "expires=" + date.toUTCString();
-                document.cookie = willCookie;
-                console.log(willCookie);
-            }
-        </script>
         <div style="text-align: center;">
             <form action="https://api.findflag.kr/dimigo/realStudent" method="POST">
                 <a style="color: rgb(244, 11, 126); font-size: 40px;">온라인 수업 연결 로그인</a>
