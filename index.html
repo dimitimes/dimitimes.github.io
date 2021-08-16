@@ -2,6 +2,9 @@
     <head>
         <meta charset="utf-8">
         <title>Dimi Time Table</title>
+        <link type="text/css" rel="stylesheet" href="https://findflag.kr/alert/sweetalert2.css" />
+        <script type="text/javascript" src="https://findflag.kr/alert/sweetalert2.js"></script>
+        <script type="text/javascript" src="https://findflag.kr/alert/es6-promise.js"></script>
         <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-HF7JB30096"></script>
@@ -13,6 +16,28 @@
         </script>
         <script data-ad-client="ca-pub-8092137443918299" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            function jaga_ok() {
+                swal({
+                    position: 'top-end',
+                    title : "자가진단 완료",
+                    text : "무증상으로 자가진단을 완료했습니다.\n증상이 있을 경우, 꼭 자가진단 앱이나 웹을 실행하여 다시 자가진단에 참여해주세요.",
+                    type : "success",
+                    icon: 'success',
+                    showConfirmButton: true
+                });
+            }
+            function jaga_fail(fail) {
+                swal({
+                    position: 'top-end',
+                    title : "자가진단 실패",
+                    text : "오류로 인해 자가진단에 실패했습니다. 오류는 다음과 같습니다.\n[" + fail + "]",
+                    type : "error",
+                    icon: 'error',
+                    showConfirmButton: true
+                });
+            }
+        </script>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Noto+Sans+KR:wght@900&display=swap');
             body {
@@ -195,12 +220,12 @@
                 } else{
                     $.get("https://api.findflag.kr/dimitimes/jaga/" + name + '/' + code.substring(0, 6) + '/' + code.substring(6, 10), function(jqXHR) {
                         if(jqXHR == "SUCCESS"){
-                            alert( "무증상으로 자가진단을 완료했습니다.\n증상이 있을 경우, 꼭 자가진단 앱이나 웹을 실행하여 다시 자가진단에 참여해주세요." );
-                            console.log("success >>> " + jqXHR)
+                            jaga_ok();
+                            console.log("success >>> " + jqXHR);
                             document.getElementById("loading").style.display = "none";
                         } else{
-                            alert( "알 수 없는 오류로 인해 자가진단에 실패했습니다.\n우측 하단 채널톡을 통해 연락주세요." );
-                            console.log("fail >>> " + jqXHR)
+                            jaga_fail(jqXHR);
+                            console.log("fail >>> " + jqXHR);
                             document.getElementById("loading").style.display = "none";
                         }
                     });
