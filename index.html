@@ -285,11 +285,11 @@
                 return unescape(cValue);
             }
             function loadCookie(){
-                document.getElementById('name').innerHTML = getCookie("nameCookie");
+                document.getElementById('name').value = getCookie("nameCookie");
                 console.log(getCookie("nameCookie"));
-                document.getElementById('number').innerHTML = getCookie("numberCookie");
+                document.getElementById('number').value = getCookie("numberCookie");
                 console.log(getCookie("numberCookie"))
-                document.getElementById('code').innerHTML = getCookie("codeCookie");
+                document.getElementById('code').value = getCookie("codeCookie");
                 console.log(getCookie("codeCookie"))
             }
             loadCookie();
