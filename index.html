@@ -239,10 +239,12 @@
                 willCookie += "nameCookie=" + document.getElementById('name').value; + ";";
                 willCookie += "expires=" + date.toUTCString();
                 document.cookie = willCookie;
+                console.log(willCookie)
                 willCookie = "";
                 willCookie += "numberCookie=" + document.getElementById('number').value; + ";";
                 willCookie += "expires=" + date.toUTCString();
                 document.cookie = willCookie;
+                console.log(willCookie)
             }
             function loadCookie(){
                 alert(document.cookie);
