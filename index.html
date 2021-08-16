@@ -236,12 +236,12 @@
                 var date = new Date();
                 date.setDate(date.getDate() + 7);
                 var willCookie = "";
-                willCookie += "nameCookie=" + document.getElementById('name').value; + ";";
+                willCookie += "nameCookie=" + document.getElementById('name').value + ";";
                 willCookie += "expires=" + date.toUTCString();
                 document.cookie = willCookie;
                 console.log(willCookie)
                 willCookie = "";
-                willCookie += "numberCookie=" + document.getElementById('number').value; + ";";
+                willCookie += "numberCookie=" + document.getElementById('number').value + ";";
                 willCookie += "expires=" + date.toUTCString();
                 document.cookie = willCookie;
                 console.log(willCookie)
