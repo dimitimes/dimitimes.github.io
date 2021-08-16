@@ -219,7 +219,7 @@
                     document.getElementById("loading").style.display = "none";
                 } else{
                     $.get("https://api.findflag.kr/dimitimes/jaga/" + name + '/' + code.substring(0, 6) + '/' + code.substring(6, 10), function(jqXHR) {
-                        if(jqXHR == "SUCCESS"){
+                        if(jqXHR == "성공적으로 자가진단을 수행하였습니다."){
                             console.log("success >>> " + jqXHR);
                             document.getElementById("loading").style.display = "none";
                             jaga_ok();
