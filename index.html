@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Dimi Time Table</title>
+        <title>Dimitimes</title>
         <link type="text/css" rel="stylesheet" href="https://findflag.kr/alert/sweetalert2.css" />
         <script type="text/javascript" src="https://findflag.kr/alert/sweetalert2.js"></script>
         <script type="text/javascript" src="https://findflag.kr/alert/es6-promise.js"></script>
@@ -93,12 +93,11 @@
             .top_bar_fix{position:fixed; top:0; left:0; width:100%;}
             .pd_top_80{padding-top:80px;}
             .wrap .top_fix_zone{height:60px; background:rgb(244, 11, 126); line-height:60px;}
-            .wrap .top_fix_zones{height:60px; background:#00aaff; line-height:60px;}
+            .wrap .top_fix_zones{height:60px; background:#007bff; line-height:60px;}
             button {
                 height: 2.5em;
                 cursor: pointer;
             }
-
             #popup {
                 display: flex;
                 justify-content: center;
@@ -111,16 +110,13 @@
                 background: rgba(0, 0, 0, .7);
                 z-index: 1;
             }
-
             #popup.hide {
                 display: none;
             }
-
             #popup.has-filter {
                 backdrop-filter: blur(4px);
                 -webkit-backdrop-filter: blur(4px);
             }
-
             #popup .content {
                 padding: 20px;
                 background: #fff;
@@ -276,24 +272,24 @@
         </script>
         <div class="wrap">
             <div class="top_fix_zones" id="topBar">
-                <a style="color: white;">이제 드디어 1~4반 친구들도 온라인 수업 연결 서비스를 지원해요!</a>
+                <a style="color: white;">더 밝은 색감으로 변한 UI 2.1 Design이 적용되었습니다!</a>
             </div>
         </div>
         <div class="wrap">
             <div class="top_fix_zone" id="topBar">
-                <a style="color: white;">디미타임즈에 많은 변화가 생겼어요! 자세한 내용은 </a><a href="https://kimain.notion.site/71de2d5eaf7546c29a64a2a05d9e69fd" target='_blank'>릴리즈 노트</a><a style="color: white;">에서 확인할 수 있어요!</a>
+                <a style="color: white;">디미타임즈에 많은 변화가 생겼어요! 자세한 사항은 </a><a href="https://kimain.notion.site/71de2d5eaf7546c29a64a2a05d9e69fd" target='_blank'>릴리즈 노트</a><a style="color: white;">에서!</a>
             </div>
         </div>
-        <br><br><br><br><br>
-        <h1 style="color: gray; text-align: center; font-size: 80px; line-height: 100px; font-family: 'Noto Sans KR', sans-serif;">Welcome to</h1>
+        <br><br><br><br>
+        <h1 style="color: gray; text-align: center; font-size: 80px; line-height: 80px; font-family: 'Noto Sans KR', sans-serif;">Welcome to</h1>
         <h1 style="color: rgb(244, 11, 126); text-align: center; font-size: 120px; line-height: 100px; font-family: 'Noto Sans KR', sans-serif;">Dimitimes</h1>
-        <p style="font-size: 30px; padding-left: 300px;">with UI 2.0 Design</p>
+        <p style="font-size: 30px; padding-left: 320px;">with UI 2.1 Design</p>
         <!-- <h1 style="color: rgb(244, 11, 126); text-align: center; font-size: 50px; line-height: 70px; font-family: 'Noto Sans KR', sans-serif;">Design by KimAin in GitHub</h1> -->
-        <br><br><br>
+        <!-- <br><br><br>
         <div style="font-size: 25px;">온라인 수업 자동 연결 기능은 디미고 학생인증 후 사용 가능합니다.</div>
-        <div style="font-size: 25px;">1학년의 모든 과를 지원하고, 수업 링크 유출 시 처벌될 수 있습니다.</div>
-        <br><br><br>
-        <div style="text-align: center; cursor: pointer;" onclick="window.open('https://benedu.co.kr')">
+        <div style="font-size: 25px;">1학년의 모든 과를 지원하고, 수업 링크 유출 시 처벌될 수 있습니다.</div> -->
+        <br><br>
+        <div onclick="window.open('https://benedu.co.kr')" style="cursor: pointer; font-size: 23px; color: white; text-align: center; width: 800px; margin-left: auto; margin-right: auto; font-family: 'Noto Sans KR', sans-serif; background-color: #007bff; border-radius: 10px; padding: 4px 10px 4px 10px;">
             <img width="30px" src="https://benedu.co.kr/Content/dimigo/images/benedu.png">
             <a style="font-size: 25px;">친구들! 베네듀 했어요?? 여기 눌러서 베네듀 하고 가요!</a>
             <img width="30px" src="https://benedu.co.kr/Content/dimigo/images/benedu.png">
@@ -304,12 +300,13 @@
                 <a style="color: rgb(244, 11, 126); font-size: 40px;">온라인 수업 연결 로그인</a>
                 <br>
 <!--                 <div style="font-size: 23px; color: white; text-align: center; width: 800px; margin-left: auto; margin-right: auto; font-family: 'Noto Sans KR', sans-serif; background-color: red; border-radius: 10px; padding: 4px 10px 4px 10px;">등록되지 않은 사용자라고 뜬다면 <a href="https://dimitimes.github.io/signup" target='_blank' style="font-size: 23px;">여기에서</a> 학생 등록 후 사용해주세요!</div> -->
-                <input type="text" placeholder="학번" id="number" name="number" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
-                <input type="text" placeholder="이름" id="name" name="name" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
-                <input onclick="but_click()" type="submit" value="학생인증 >" style="cursor: pointer; font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
+                <!-- <div class="balloon right" style="font-size: 20px;"><span>hihi</span></div> -->
+                <input type="text" placeholder="학번" id="number" name="number" style="font-size: 25px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
+                <input type="text" placeholder="이름" id="name" name="name" style="font-size: 25px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 170px;">
+                <input onclick="but_click()" type="submit" value="학생인증 >" style="cursor: pointer; font-size: 25px; font-family: 'Noto Sans KR', sans-serif; color: white; background-color: #007bff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
                 <br>
-                <input type="number" min="0" placeholder="생년월일+비밀번호(총 10자리)" id="code" name="code" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 444px;">
-                <input onclick="but_clicks()" type="button" value="원클릭 자가진단 >" style="cursor: pointer; font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
+                <input type="text" min="0" placeholder="생년월일+비밀번호(총 10자리)" id="code" name="code" style="font-size: 25px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 444px;">
+                <input onclick="but_clicks()" type="button" value="원클릭 자가진단 >" style="cursor: pointer; font-size: 25px; font-family: 'Noto Sans KR', sans-serif; color: white; background-color: #007bff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
                 <br>
                 <i style="font-size: 20px; padding: 0px; margin: 0px;" class="fas fa-question-circle">.</i>
                 <h style="font-size: 20px; padding: 0px; margin: 0px;">학생인증을 눌렀을 때 오류코드가 뜬다면 우측 하단 채널톡을 통해 연락주세요.</a>
@@ -344,8 +341,8 @@
             <form action="https://api.findflag.kr/dimitimes/mail" method="POST">
                 <a style="color: rgb(244, 11, 126); font-size: 40px;">디지털 교과서(PDF) 다운로드</a>
                 <br>
-                <input type="email" name="mails" id="mails" placeholder="디미고 이메일" style="font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 500px;">
-                <input onclick="but_click()" type="submit" value="학생인증 >" style="cursor: pointer; font-size: 30px; font-family: 'Noto Sans KR', sans-serif; color: black; background-color: #00aaff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
+                <input type="email" name="mails" id="mails" placeholder="디미고 이메일" style="font-size: 25px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 500px;">
+                <input onclick="but_click()" type="submit" value="학생인증 >" style="cursor: pointer; font-size: 25px; font-family: 'Noto Sans KR', sans-serif; color: white; background-color: #007bff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
                 <br>
                 <i style="font-size: 20px; padding: 0px; margin: 0px;" class="fas fa-question-circle">.</i>
                 <h style="font-size: 20px; padding: 0px; margin: 0px;">학생인증을 눌렀을 때 오류코드가 뜬다면 우측 하단 채널톡을 통해 연락주세요.</a>
