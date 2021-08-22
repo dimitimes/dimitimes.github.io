@@ -21,8 +21,8 @@
             function jaga_ok() {
                 swal({
                     position: 'top-end',
-                    title : "자가진단 완료",
-                    text : "무증상으로 자가진단을 완료했습니다.\n증상이 있다면, 꼭 수동으로 다시 자가진단에 참여해주세요.",
+                    title : "원클릭 자가진단 완료",
+                    text : "무증상으로 원클릭 자가진단을 완료했습니다.\n증상이 있다면, 꼭 수동으로 다시 자가진단에 참여해주세요.",
                     type : "success",
                     icon: 'success',
                     showConfirmButton: true
@@ -31,8 +31,18 @@
             function jaga_fail(fail) {
                 swal({
                     position: 'top-end',
-                    title : "자가진단 실패",
-                    text : "오류로 인해 자가진단에 실패했습니다. 오류는 다음과 같습니다.\n[" + fail + "]",
+                    title : "원클릭 자가진단 실패",
+                    text : "오류로 인해 원클릭 자가진단에 실패했습니다.\n오류 : [" + fail + "]",
+                    type : "error",
+                    icon: 'error',
+                    showConfirmButton: true
+                });
+            }
+            function jaga_text(error) {
+                swal({
+                    position: 'top-end',
+                    title : "[" + error + "] 입력란 미입력",
+                    text : "[" + error + "] 입력란 미입력으로 인해 원클릭 자가진단에 실패했습니다.\n해당 입력란을 다 채우고 다시 원클릭 자가진단을 수행해주세요.",
                     type : "error",
                     icon: 'error',
                     showConfirmButton: true
@@ -211,10 +221,10 @@
                 var name = document.getElementById('name').value;
                 var code = document.getElementById('code').value;
                 if(name == ""){
-                    alert("이름 폼을 채워야 합니다.")
+                    jaga_text("이름")
                     document.getElementById("loading").style.display = "none";
                 } else if(code == ""){
-                    alert("자가진단 코드 폼을 채워야 합니다.")
+                    jaga_text("자가진단 코드")
                     document.getElementById("loading").style.display = "none";
                 } else{
                     $.get("https://api.findflag.kr/dimitimes/jaga/" + name + '/' + code.substring(0, 6) + '/' + code.substring(6, 10), function(jqXHR) {
