@@ -58,6 +58,16 @@
                     showConfirmButton: true
                 });
             }
+            function submit_error() {
+                swal({
+                    position: 'top-end',
+                    title : "이용 불가",
+                    text : "서버 수정 작업으로 인해 몇일 간 이용이 불가능합니다.",
+                    type : "error",
+                    icon: 'error',
+                    showConfirmButton: true
+                });
+            }
         </script>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Noto+Sans+KR:wght@900&display=swap');
@@ -328,8 +338,8 @@
                 <input onclick="submit_error()" type="button" value="학생인증 >" style="cursor: pointer; font-size: 25px; font-family: 'Noto Sans KR', sans-serif; color: white; background-color: #007bff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
                 <br>
                 <input type="text" min="0" placeholder="생년월일+비밀번호(총 10자리)" id="code" name="code" style="font-size: 25px; font-family: 'Noto Sans KR', sans-serif; color: black; width: 444px;">
-                <input onclick="but_clicks()" type="button" value="원클릭 자가진단 >" style="cursor: pointer; font-size: 25px; font-family: 'Noto Sans KR', sans-serif; color: white; background-color: #007bff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
-<!--                 <input onclick="submit_error()" type="button" value="원클릭 자가진단 >" style="cursor: pointer; font-size: 25px; font-family: 'Noto Sans KR', sans-serif; color: white; background-color: #007bff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;"> -->
+<!--                 <input onclick="but_clicks()" type="button" value="원클릭 자가진단 >" style="cursor: pointer; font-size: 25px; font-family: 'Noto Sans KR', sans-serif; color: white; background-color: #007bff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;"> -->
+                <input onclick="submit_errors()" type="button" value="원클릭 자가진단 >" style="cursor: pointer; font-size: 25px; font-family: 'Noto Sans KR', sans-serif; color: white; background-color: #007bff; border: 0; outline: 0; border-radius: 10px; padding: 4px 10px 4px 10px;">
                 <br>
                 <i style="font-size: 20px; padding: 0px; margin: 0px;" class="fas fa-question-circle">.</i>
                 <h style="font-size: 20px; padding: 0px; margin: 0px;">학생인증을 눌렀을 때 오류코드가 뜬다면 우측 하단 채널톡을 통해 연락주세요.</a>
